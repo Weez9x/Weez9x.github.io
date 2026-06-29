@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ilya Vagin — C++ Developer</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="page-shell">
+    <header class="hero">
+      <div>
+        <p class="eyebrow">C++ Developer Portfolio</p>
+        <h1>Илья Вагин</h1>
+        <p class="subtitle">
+          Строю C++ проекты с нуля: игровые движки, системные утилиты,
+          учебные реализации и инженерные эксперименты.
+        </p>
+      </div>
+
+      <div class="hero-card">
+        <div class="status-line">
+          <span class="status-dot"></span>
+          Looking for C++ opportunities
+        </div>
+        <p><strong>Focus:</strong> Game Engine · Systems · Tools · Architecture</p>
+        <p><strong>Core:</strong> C++ · STL · OOP · Git · SFML · WinAPI</p>
+      </div>
+    </header>
+
+    <main class="layout">
+      <section class="panel project-list-panel">
+        <div class="section-title">
+          <span>Project Inspector</span>
+          <span class="hint">select project</span>
+        </div>
+
+        <div class="filters" id="filters">
+          <button class="filter-button active" data-filter="all">All</button>
+          <button class="filter-button" data-filter="engine">Engine</button>
+          <button class="filter-button" data-filter="system">System</button>
+          <button class="filter-button" data-filter="memory">Memory</button>
+          <button class="filter-button" data-filter="simulation">Simulation</button>
+        </div>
+
+        <div class="project-list" id="projectList"></div>
+      </section>
+
+      <section class="panel details-panel">
+        <div class="section-title">
+          <span id="detailsTitle">Inspect</span>
+          <span class="hint" id="detailsTag">project</span>
+        </div>
+
+        <article class="project-details" id="projectDetails"></article>
+      </section>
+    </main>
+
+    <section class="panel philosophy">
+      <div class="section-title">
+        <span>Engineering profile</span>
+        <span class="hint">how I think</span>
+      </div>
+
+      <div class="profile-grid">
+        <div>
+          <h2>I build systems from scratch.</h2>
+          <p>
+            Мне интересно не только пользоваться готовыми инструментами,
+            но и понимать, как они устроены внутри: память, архитектура,
+            игровой цикл, рендеринг, ресурсы, состояние объектов и границы ответственности модулей.
+          </p>
+        </div>
+
+        <div class="terminal-card">
+          <pre><code>&gt; current_mission
+
+finish C++ portfolio
+refactor game engine
+study OpenGL
+prepare for C++ interviews
+
+&gt; status
+
+learning in public
+building real projects
+ready for hard problems</code></pre>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel ai-note">
+      <div class="section-title">
+        <span>How this portfolio was built</span>
+        <span class="hint">transparency</span>
+      </div>
+
+      <p>
+        Этот сайт сделан в формате AI-assisted development. Я спроектировал структуру,
+        подготовил контент, выбрал подачу и проверял результат. HTML, CSS и JavaScript
+        были реализованы с помощью AI, потому что моя основная специализация — C++,
+        а не frontend-разработка.
+      </p>
+    </section>
+
+    <footer class="footer">
+      <span>GitHub: <a href="https://github.com/Weez9x" target="_blank" rel="noreferrer">Weez9x</a></span>
+      <span>Email: <a href="mailto:weezex2k18@gmail.com">weezex2k18@gmail.com</a></span>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
