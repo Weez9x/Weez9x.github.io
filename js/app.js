@@ -271,8 +271,8 @@ function renderContacts() {
       <h1 class="page-title">Контакты</h1>
 
       <p class="lead">
-        Открыт к стажировкам, junior-позициям и задачам,
-        связанным с C++, gamedev и графикой.
+        Открыт junior-позициям и задачам,
+        связанным с C++, gamedev и графикой а так же другими направлениями программирования.
       </p>
 
       <div class="contact-list">
