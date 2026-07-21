@@ -272,7 +272,7 @@ function renderContacts() {
       <div class="contact-list">
         <a href="https://github.com/Weez9x" target="_blank" rel="noreferrer">github.com/Weez9x</a>
         <a href="mailto:weezex2k18@gmail.com">weezex2k18@gmail.com</a>
-        <a href="https://t.me/weezex2k18" target="_blank" rel="noreferrer">@weezex2k18</a>
+        <a href="@Byt3Rise" target="_blank" rel="noreferrer">@weezex2k18</a>
       </div>
       <div class="actions">${resumeButton()}</div>
     </section>
