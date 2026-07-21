@@ -132,10 +132,35 @@ function renderHome() {
   `;
 }
 
+function renderProjectMedia(project) {
+  if (!project.media?.length) {
+    return "";
+  }
+
+  const items = project.media.map(media => `
+    <figure class="project-media-item">
+      <img src="${media.src}" alt="${escapeHtml(media.alt)}" loading="lazy">
+    </figure>
+  `).join("");
+
+  return `
+    <section class="project-media" aria-label="Демонстрация проекта">
+      <div class="project-media-header">
+        <span class="code-comment">// gameplay preview</span>
+        <span>${project.media.length === 1 ? "GIF из README" : `${project.media.length} GIF из README`}</span>
+      </div>
+      <div class="project-media-grid${project.media.length === 1 ? " single" : ""}">
+        ${items}
+      </div>
+    </section>
+  `;
+}
+
 function renderProject(project) {
   const features = project.features.map(item => `<li>${escapeHtml(item)}</li>`).join("");
   const badges = project.tech.map(item => `<span class="badge">${escapeHtml(item)}</span>`).join("");
   const notice = project.notice ? `<div class="notice">${escapeHtml(project.notice)}</div>` : "";
+  const media = renderProjectMedia(project);
 
   return `
     <section class="code-page">
@@ -144,6 +169,7 @@ function renderProject(project) {
       <div class="page-meta">${escapeHtml(project.status)} · ${escapeHtml(project.stack)}</div>
       <p class="lead">${escapeHtml(project.description)}</p>
       ${notice}
+      ${media}
 
       <div class="project-grid">
         <section class="info-block">
