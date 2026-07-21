@@ -267,14 +267,40 @@ function renderContacts() {
   return `
     <section class="code-page">
       <p class="code-comment">// let's build something useful</p>
+
       <h1 class="page-title">Контакты</h1>
-      <p class="lead">Открыт к стажировкам, junior-позициям и задачам, связанным с C++, gamedev и графикой.</p>
+
+      <p class="lead">
+        Открыт к стажировкам, junior-позициям и задачам,
+        связанным с C++, gamedev и графикой.
+      </p>
+
       <div class="contact-list">
-        <a href="https://github.com/Weez9x" target="_blank" rel="noreferrer">github.com/Weez9x</a>
-        <a href="mailto:weezex2k18@gmail.com">weezex2k18@gmail.com</a>
-        <a href="@Byt3Rise" target="_blank" rel="noreferrer">@weezex2k18</a>
+        <a href="https://github.com/Weez9x" target="_blank" rel="noreferrer">
+          github.com/Weez9x
+        </a>
+
+        <a href="mailto:weezex2k18@gmail.com">
+          weezex2k18@gmail.com
+        </a>
+
+        <a href="https://t.me/Byt3Rise" target="_blank" rel="noreferrer">
+          @Byt3Rise
+        </a>
       </div>
-      <div class="actions">${resumeButton()}</div>
+
+      <hr class="code-divider">
+
+      <p class="code-comment">
+        // Примечание<br>
+        // Данное портфолио разработано Ильей Вагиным.<br>
+        // В процессе разработки использовались<br>
+        // современные инструменты ИИ.
+      </p>
+
+      <div class="actions">
+        ${resumeButton()}
+      </div>
     </section>
   `;
 }

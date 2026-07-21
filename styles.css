@@ -299,6 +299,13 @@ pre {
   flex-wrap: wrap;
 }
 
+.code-divider {
+    border: none;
+    border-top: 1px solid var(--border-color);
+    margin: 24px 0 16px;
+    opacity: 0.5;
+}
+
 @media (max-width: 900px) {
   .hero,
   .layout,
