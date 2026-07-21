@@ -1,29 +1,65 @@
-# C++ Developer Portfolio
+# Ilya Vagin | Portfolio
 
-Static GitHub Pages portfolio for a C++ developer.
+Personal portfolio website built with HTML, CSS and JavaScript.
 
-## Structure
+The website showcases my projects, technical skills and experience as a C++ developer with an interest in game development, graphics programming and engine development.
+![GitHub last commit](https://img.shields.io/github/last-commit/Weez9x/Weez9x.github.io)
+![License](https://img.shields.io/badge/license-MIT-green)
+![HTML](https://img.shields.io/badge/HTML-5-orange)
+![CSS](https://img.shields.io/badge/CSS-3-blue)
+![JavaScript](https://img.shields.io/badge/JavaScript-ES6-yellow)
+## Live Demo
 
-- `index.html` — page markup
-- `styles.css` — visual style
-- `script.js` — interactive project inspector
+https://weez9x.github.io/
 
-## How to publish on GitHub Pages
+## Features
 
-1. Create a repository, for example: `cpp-portfolio`.
-2. Upload these files to the repository root.
-3. Open repository settings.
-4. Go to **Pages**.
-5. Select **Deploy from a branch**.
-6. Branch: `main`, folder: `/root`.
-7. Save.
+- Responsive design
+- Smooth page transitions
+- Terminal/IDE inspired interface
+- Project showcase
+- Downloadable resume
+- Contact page
+- Dark theme
 
-The site will be available at:
+## Technologies
 
-`https://YOUR_USERNAME.github.io/cpp-portfolio/`
+- HTML5
+- CSS3
+- JavaScript (ES6)
+- GitHub Pages
 
-## Note
+## Projects
 
-This portfolio uses AI-assisted frontend development.
-The portfolio owner designed the structure, content and interaction flow.
-HTML, CSS and JavaScript were generated with AI assistance and then reviewed.
+- Rogalique Engine
+- Particle Sandbox
+- MyString (C++11)
+- SleepBlocker
+- Snake
+- Arkanoid
+
+## Local запуск
+
+Clone the repository:
+
+```bash
+git clone https://github.com/Weez9x/Weez9x.github.io.git
+```
+
+Open:
+
+```
+index.html
+```
+
+or run any local web server.
+
+## AI Assistance
+
+This portfolio was designed and developed by **Ilya Vagin**.
+
+Modern AI tools were used during development to assist with layout, design ideas and text refinement. All engineering decisions, implementation and project content were created and reviewed by the author.
+
+## License
+
+MIT License
