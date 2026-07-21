@@ -15,7 +15,21 @@ window.portfolioProjects = [
     ],
     learned: "Проект дал практическое понимание границ ответственности модулей, жизненного цикла игровых объектов и архитектуры небольшого движка.",
     tech: ["C++", "SFML", "OOP", "Game Engine", "Components", "Git"],
-    url: "https://github.com/Weez9x/Rogalique_Engine"
+    url: "https://github.com/Weez9x/Rogalique_Engine",
+    media: [
+      {
+        src: "https://raw.githubusercontent.com/Weez9x/Rogalique_Engine/main/Docks/gameplay_1.gif",
+        alt: "Игровой процесс Rogalique — исследование уровня"
+      },
+      {
+        src: "https://raw.githubusercontent.com/Weez9x/Rogalique_Engine/main/Docks/gameplay_2.gif",
+        alt: "Игровой процесс Rogalique — взаимодействие с противниками"
+      },
+      {
+        src: "https://raw.githubusercontent.com/Weez9x/Rogalique_Engine/main/Docks/gameplay_3.gif",
+        alt: "Игровой процесс Rogalique — механики собственного движка"
+      }
+    ]
   },
   {
     id: "opengl",
@@ -67,7 +81,13 @@ window.portfolioProjects = [
     ],
     learned: "Получил практику декомпозиции игровой логики и обработки столкновений в реальном времени.",
     tech: ["C++", "SFML", "OOP", "Collision"],
-    url: "https://github.com/Weez9x/ArkanoidGame"
+    url: "https://github.com/Weez9x/ArkanoidGame",
+    media: [
+      {
+        src: "https://raw.githubusercontent.com/Weez9x/ArkanoidGame/master/Docks/gameplay.gif",
+        alt: "Игровой процесс Arkanoid"
+      }
+    ]
   },
   {
     id: "snake",
@@ -83,6 +103,12 @@ window.portfolioProjects = [
     ],
     learned: "Закрепил базовую структуру игрового приложения, работу со временем и обновление состояния мира.",
     tech: ["C++", "SFML", "Game Loop"],
-    url: "https://github.com/Weez9x/SnakeGame"
+    url: "https://github.com/Weez9x/SnakeGame",
+    media: [
+      {
+        src: "https://raw.githubusercontent.com/Weez9x/SnakeGame/master/Docks/gameplay.gif",
+        alt: "Игровой процесс Snake"
+      }
+    ]
   }
 ];
