@@ -144,6 +144,9 @@
   margin-top: 28px;
 }
 
+.certificates-section { margin-top: 34px; }
+.certificates-section h2 { margin: 0; color: var(--accent); font-size: 18px; }
+
 .info-block {
   padding: 20px;
   background: rgba(31, 38, 48, 0.52);

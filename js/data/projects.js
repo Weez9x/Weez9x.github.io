@@ -36,18 +36,24 @@ window.portfolioProjects = [
     file: "ParticleSandbox.cpp",
     title: "OpenGL Particle Sandbox",
     status: "В активной разработке",
-    stack: "C++ / OpenGL / Graphics",
-    description: "Учебно-исследовательский графический sandbox для последовательного изучения современного OpenGL и проектирования системы частиц.",
+    stack: "C++ / OpenGL 3.3 / GLSL",
+    description: "Учебная физическая и графическая песочница на C++ и OpenGL без использования игровых движков. Проект развивается как основа для экспериментов с рендерингом и симуляцией частиц.",
     features: [
-      "модульная структура графических подсистем",
-      "shader, camera, texture и mesh pipeline",
-      "базовая система частиц и эмиттеры",
-      "планируемое освещение и постобработка"
+      "OpenGL 3.3 Core через GLFW и GLAD",
+      "GLSL shader pipeline",
+      "perspective camera и управление камерой",
+      "перевод координат курсора из screen space в world space",
+      "собственные Vector3 и Matrix4",
+      "генератор частиц и burst-спавн мышью",
+      "semi-implicit Euler integration",
+      "gravity, damping и restitution bounce",
+      "GPU point-sprite rendering",
+      "динамическое обновление данных в VBO"
     ],
-    learned: "Текущий фокус — устройство графического pipeline, управление GPU-ресурсами и архитектура рендеринга.",
-    tech: ["C++", "OpenGL", "GLSL", "GLFW", "CMake"],
-    url: "https://github.com/Weez9x/OpenGl_SandBox_ParticleSystem",
-    notice: "Проект находится в активной разработке. Текущая версия пока не является демонстрационной и не отражает конечный результат."
+    learned: "Проект закрепляет устройство shader pipeline, работу с GPU-буферами, камерами, координатными преобразованиями и базовой физической интеграцией частиц.",
+    tech: ["C++", "OpenGL 3.3", "GLSL", "GLFW", "GLAD"],
+    url: "https://github.com/Weez9x/OpenGl_SandBox_ParticleSystem/tree/test",
+    notice: "Проект находится в активной разработке. Описание относится к текущей ветке test и не заявляет полноценный игровой движок."
   },
   {
     id: "mystring",
