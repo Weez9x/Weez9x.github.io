@@ -6,6 +6,7 @@ const editor = document.getElementById("editor");
 
 const resumeUrl = "assets/Ilya_Vagin_CV.pdf";
 const xyzCertificateUrl = "assets/2025-1466.pdf";
+const xyzCertificateImageUrl = "assets/certificates/xyz-school-cpp-games-2025.png";
 const workshopUrl = "https://steamcommunity.com/id/forester2k18/myworkshopfiles/";
 const workshopItems = [
   "1830841700",
@@ -134,18 +135,9 @@ function renderHome() {
       </div>
       <section class="certificates-section">
         <h2>Сертификаты</h2>
-        <div class="project-grid">
-          <section class="info-block">
-            <h3>XYZ School</h3>
-            <p>C++ для разработки игр</p>
-            <div class="badges"><span class="badge">Результат: 98 / 100</span><span class="badge">2025</span></div>
-          </section>
-          <section class="info-block">
-            <h3>Подтверждение</h3>
-            <p>Сертификат об окончании программы доступен как PDF-файл.</p>
-            <div class="actions"><a class="button-link resume-link" href="${xyzCertificateUrl}" target="_blank" rel="noreferrer">Открыть сертификат</a></div>
-          </section>
-        </div>
+        <a class="certificate-preview" href="${xyzCertificateUrl}" target="_blank" rel="noreferrer" aria-label="Открыть сертификат XYZ School в PDF">
+          <img src="${xyzCertificateImageUrl}" alt="Сертификат XYZ School по программе C++ для разработки игр" loading="lazy">
+        </a>
       </section>
     </section>
   `;
@@ -274,7 +266,7 @@ function renderSkills() {
         <section class="info-block"><h3>Инструменты</h3><div class="badges"><span class="badge">Git</span><span class="badge">CMake</span><span class="badge">Visual Studio</span><span class="badge">Linux</span></div></section>
         <section class="info-block"><h3>Практика</h3><div class="badges"><span class="badge">OOP</span><span class="badge">RAII</span><span class="badge">Move Semantics</span><span class="badge">Algorithms</span><span class="badge">Data Structures</span><span class="badge">Game Architecture</span></div></section>
         <section class="info-block"><h3>Graphics & Content Pipeline</h3><div class="badges"><span class="badge">Substance Painter</span><span class="badge">Substance Designer</span><span class="badge">PBR</span><span class="badge">Texture Baking</span><span class="badge">UV Mapping</span></div></section>
-        <section class="info-block"><h3>Сертификаты</h3><div class="badges"><span class="badge">XYZ School: C++ для разработки игр (98/100)</span><span class="badge">Госуслуги: IT-компетенции</span></div><div class="actions"><a class="button-link resume-link" href="${xyzCertificateUrl}" target="_blank" rel="noreferrer">Открыть XYZ School PDF</a></div></section>
+        <section class="info-block"><h3>Сертификаты</h3><div class="badges"><span class="badge">XYZ School: C++ для разработки игр</span><span class="badge">Госуслуги: IT-компетенции</span></div><div class="actions"><a class="button-link resume-link" href="${xyzCertificateUrl}" target="_blank" rel="noreferrer">Открыть XYZ School PDF</a></div></section>
       </div>
     </section>
   `;

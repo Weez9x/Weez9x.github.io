@@ -59,7 +59,7 @@ Implemented functionality:
 
 ## Certificates
 
-- XYZ School: C++ для разработки игр, result 98/100 (`assets/2025-1466.pdf`)
+- XYZ School: C++ для разработки игр, 98 academic hours (`assets/2025-1466.pdf`)
 
 ## Structure
 

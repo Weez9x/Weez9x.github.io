@@ -147,6 +147,21 @@
 .certificates-section { margin-top: 34px; }
 .certificates-section h2 { margin: 0; color: var(--accent); font-size: 18px; }
 
+.certificate-preview {
+  display: block;
+  margin-top: 24px;
+  overflow: hidden;
+  background: rgba(13, 17, 23, 0.66);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+
+.certificate-preview img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 .info-block {
   padding: 20px;
   background: rgba(31, 38, 48, 0.52);
