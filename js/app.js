@@ -266,7 +266,7 @@ function renderSkills() {
         <section class="info-block"><h3>Инструменты</h3><div class="badges"><span class="badge">Git</span><span class="badge">CMake</span><span class="badge">Visual Studio</span><span class="badge">Linux</span></div></section>
         <section class="info-block"><h3>Практика</h3><div class="badges"><span class="badge">OOP</span><span class="badge">RAII</span><span class="badge">Move Semantics</span><span class="badge">Algorithms</span><span class="badge">Data Structures</span><span class="badge">Game Architecture</span></div></section>
         <section class="info-block"><h3>Graphics & Content Pipeline</h3><div class="badges"><span class="badge">Substance Painter</span><span class="badge">Substance Designer</span><span class="badge">PBR</span><span class="badge">Texture Baking</span><span class="badge">UV Mapping</span></div></section>
-        <section class="info-block"><h3>Сертификаты</h3><div class="badges"><span class="badge">XYZ School: C++ для разработки игр</span><span class="badge">Госуслуги: IT-компетенции</span></div><div class="actions"><a class="button-link resume-link" href="${xyzCertificateUrl}" target="_blank" rel="noreferrer">Открыть XYZ School PDF</a></div></section>
+        <section class="info-block"><h3>Сертификаты</h3><div class="badges"><span class="badge">XYZ School: C++ для разработки игр · 98 акад. часов</span><span class="badge">Госуслуги: IT-компетенции</span></div><div class="actions"><a class="button-link resume-link" href="${xyzCertificateUrl}" target="_blank" rel="noreferrer">Открыть XYZ School PDF</a></div></section>
       </div>
     </section>
   `;
