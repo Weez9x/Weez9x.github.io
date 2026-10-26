@@ -17,13 +17,13 @@ https://weez9x.github.io/
 ## Features
 
 - Responsive design
+- Light and dark themes with saved preference
 - Smooth page transitions
 - Terminal/IDE inspired interface
 - Project showcase
 - Downloadable resume
 - Certificate links
 - Contact page
-- Dark theme
 
 ## Technologies
 

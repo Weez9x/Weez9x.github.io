@@ -41,6 +41,11 @@
 .code-string { color: #a5d6ff; }
 .code-property { color: #d2a8ff; }
 
+:root[data-theme="light"] .code-keyword { color: #b42318; }
+:root[data-theme="light"] .code-type { color: #075c9e; }
+:root[data-theme="light"] .code-string { color: #17643a; }
+:root[data-theme="light"] .code-property { color: #6941a5; }
+
 .hero-name {
   margin: 10px 0 12px;
   font-size: clamp(42px, 8vw, 88px);
@@ -65,7 +70,7 @@
 .content-card {
   margin-top: 28px;
   padding: clamp(18px, 3vw, 28px);
-  background: rgba(22, 27, 34, 0.72);
+  background: var(--card-bg);
   border: 1px solid var(--border);
   border-radius: 12px;
 }
@@ -84,7 +89,7 @@
 .project-media {
   margin-top: 30px;
   overflow: hidden;
-  background: rgba(13, 17, 23, 0.66);
+  background: var(--media-shell-bg);
   border: 1px solid var(--border);
   border-radius: 12px;
 }
@@ -117,7 +122,7 @@
   margin: 0;
   display: grid;
   place-items: center;
-  background: #090c10;
+  background: var(--media-bg);
 }
 
 .project-media-item img {
@@ -147,7 +152,7 @@
   display: block;
   margin-top: 24px;
   overflow: hidden;
-  background: rgba(13, 17, 23, 0.66);
+  background: var(--media-shell-bg);
   border: 1px solid var(--border);
   border-radius: 10px;
 }
@@ -160,7 +165,7 @@
 
 .info-block {
   padding: 20px;
-  background: rgba(31, 38, 48, 0.52);
+  background: var(--info-bg);
   border: 1px solid var(--border);
   border-radius: 10px;
 }
@@ -174,7 +179,7 @@
 .badges { display: flex; flex-wrap: wrap; gap: 8px; }
 .badge {
   padding: 7px 10px;
-  color: #c9d1d9;
+  color: var(--text);
   background: var(--surface-2);
   border: 1px solid var(--border);
   border-radius: 6px;
@@ -193,7 +198,7 @@
   text-decoration: none;
 }
 .button-link:hover { background: rgba(88, 166, 255, 0.20); }
-.resume-link { border-color: #3fb950; background: rgba(63, 185, 80, 0.10); }
+.resume-link { border-color: var(--green); background: rgba(63, 185, 80, 0.10); }
 .resume-link:hover { background: rgba(63, 185, 80, 0.18); }
 
 .notice {
@@ -202,6 +207,11 @@
   color: #e3b341;
   background: rgba(210, 153, 34, 0.09);
   border-left: 3px solid var(--yellow);
+}
+
+:root[data-theme="light"] .notice {
+  color: #755000;
+  background: rgba(210, 153, 34, 0.12);
 }
 
 .contact-list { display: grid; gap: 12px; margin-top: 24px; }

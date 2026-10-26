@@ -3,6 +3,7 @@ const projectNavigation = document.getElementById("projectNavigation");
 const navigation = document.getElementById("navigation");
 const tabs = document.getElementById("tabs");
 const editor = document.getElementById("editor");
+const themeToggle = document.getElementById("themeToggle");
 
 const resumeUrl = "assets/Ilya_Vagin_CV.pdf";
 const xyzCertificateUrl = "assets/2025-1466.pdf";
@@ -17,6 +18,29 @@ const pages = {
 
 let activePage = "home";
 let openTabs = ["home"];
+
+function updateThemeToggle(theme) {
+  const nextTheme = theme === "light" ? "dark" : "light";
+  const nextLabel = nextTheme === "light" ? "Светлая" : "Тёмная";
+  themeToggle.setAttribute("aria-label", `Включить ${nextLabel.toLowerCase()} тему`);
+  themeToggle.setAttribute("title", `Включить ${nextLabel.toLowerCase()} тему`);
+  themeToggle.setAttribute("aria-pressed", String(theme === "light"));
+  themeToggle.querySelector(".theme-toggle-icon").textContent = nextTheme === "light" ? "☼" : "☾";
+  themeToggle.querySelector(".theme-toggle-label").textContent = nextLabel;
+}
+
+themeToggle.addEventListener("click", () => {
+  const nextTheme = document.documentElement.dataset.theme === "light" ? "dark" : "light";
+  document.documentElement.dataset.theme = nextTheme;
+  updateThemeToggle(nextTheme);
+  try {
+    localStorage.setItem("portfolio-theme", nextTheme);
+  } catch {
+    return;
+  }
+});
+
+updateThemeToggle(document.documentElement.dataset.theme || "dark");
 
 function escapeHtml(value) {
   return value
