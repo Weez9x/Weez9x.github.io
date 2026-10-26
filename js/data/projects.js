@@ -1,5 +1,29 @@
 window.portfolioProjects = [
   {
+    id: "tensorforge",
+    file: "TensorForge",
+    title: "TensorForge",
+    status: "В активной разработке",
+    stack: "C++ / CMake / Multithreading",
+    description: "Вычислительная библиотека и инженерная площадка для изучения производительности CPU и основ AI-инфраструктуры. Сейчас проект сосредоточен на матрицах, корректности вычислений и сравнении алгоритмов; тензорные операции запланированы как следующий этап.",
+    features: [
+      "Matrix с непрерывным построчным хранением и проверкой переполнения размера",
+      "алгоритмы умножения матриц IJK, IKJ и блочный",
+      "параллельный IKJ с распределением строк результата между потоками",
+      "тесты результатов, несовместимых размеров, единичной матрицы и сравнения алгоритмов",
+      "CMake-сборка и Release-бенчмарк"
+    ],
+    learned: "Исследую влияние порядка циклов, расположения данных в памяти, кэш-локальности и многопоточности на производительность вычислительных ядер.",
+    tech: ["C++", "CMake", "Matrix Algorithms", "Multithreading", "Testing", "Benchmarking"],
+    url: "https://github.com/Weez9x/TensorForge",
+    notice: "В одном из замеров на матрицах 1024×1024 IKJ с 8 потоками занял около 54,8 мс, а IJK — около 9,7 с. Это результат конкретной машины и запуска, а не универсальная гарантия.",
+    roadmap: [
+      "Изучить автовекторизацию компилятором и сравнить её с SIMD-реализацией",
+      "Добавить N-мерные тензоры и базовые операции над ними",
+      "Позже исследовать CUDA; отдельный runtime для инференса пока остаётся концепцией"
+    ]
+  },
+  {
     id: "rogalique",
     file: "Rogalique.cpp",
     title: "Rogalique Engine",
@@ -30,30 +54,6 @@ window.portfolioProjects = [
         alt: "Игровой процесс Rogalique — механики собственного движка"
       }
     ]
-  },
-  {
-    id: "opengl",
-    file: "ParticleSandbox.cpp",
-    title: "OpenGL Particle Sandbox",
-    status: "В активной разработке",
-    stack: "C++ / OpenGL 3.3 / GLSL",
-    description: "Учебная физическая и графическая песочница на C++ и OpenGL без использования игровых движков. Проект развивается как основа для экспериментов с рендерингом и симуляцией частиц.",
-    features: [
-      "OpenGL 3.3 Core через GLFW и GLAD",
-      "GLSL shader pipeline",
-      "perspective camera и управление камерой",
-      "перевод координат курсора из screen space в world space",
-      "собственные Vector3 и Matrix4",
-      "генератор частиц и burst-спавн мышью",
-      "semi-implicit Euler integration",
-      "gravity, damping и restitution bounce",
-      "GPU point-sprite rendering",
-      "динамическое обновление данных в VBO"
-    ],
-    learned: "Проект закрепляет устройство shader pipeline, работу с GPU-буферами, камерами, координатными преобразованиями и базовой физической интеграцией частиц.",
-    tech: ["C++", "OpenGL 3.3", "GLSL", "GLFW", "GLAD"],
-    url: "https://github.com/Weez9x/OpenGl_SandBox_ParticleSystem/tree/test",
-    notice: "Проект находится в активной разработке. Описание относится к текущей ветке test и не заявляет полноценный игровой движок."
   },
   {
     id: "mystring",
@@ -114,6 +114,37 @@ window.portfolioProjects = [
       {
         src: "https://raw.githubusercontent.com/Weez9x/SnakeGame/master/Docks/gameplay.gif",
         alt: "Игровой процесс Snake"
+      }
+    ]
+  },
+  {
+    id: "steam-workshop",
+    file: "SteamWorkshop.art",
+    title: "Игровые ассеты для Steam Workshop",
+    status: "7 опубликованных работ",
+    stack: "CS:GO / Rust / Substance 3D",
+    description: "Подборка созданных игровых предметов и материалов для CS:GO и Rust. Работы объединены в один проект и показывают опыт создания контента для Steam Workshop.",
+    features: [
+      "создание PBR-материалов и текстур",
+      "процедурная работа с материалами",
+      "подготовка и запекание текстур для игровых ассетов",
+      "публикация работ в Steam Workshop"
+    ],
+    learned: "Практика помогла разобраться в пайплайне игрового контента: от подготовки материалов и текстур до готового ассета в игре.",
+    tech: ["Substance 3D Painter", "Substance 3D Designer", "Photoshop", "PBR", "Texture Baking"],
+    url: "https://steamcommunity.com/id/forester2k18/myworkshopfiles/",
+    media: [
+      {
+        src: "assets/workshop/1830841700.webp",
+        alt: "P250 — BANG, работа для CS:GO"
+      },
+      {
+        src: "assets/workshop/2629702868.webp",
+        alt: "Sawed-Off — Scary Friend, работа для CS:GO"
+      },
+      {
+        src: "assets/workshop/2504367354.webp",
+        alt: "Ancient Glacier, работа для Rust"
       }
     ]
   }

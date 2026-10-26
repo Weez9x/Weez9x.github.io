@@ -7,20 +7,9 @@ const editor = document.getElementById("editor");
 const resumeUrl = "assets/Ilya_Vagin_CV.pdf";
 const xyzCertificateUrl = "assets/2025-1466.pdf";
 const xyzCertificateImageUrl = "assets/certificates/xyz-school-cpp-games-2025.png";
-const workshopUrl = "https://steamcommunity.com/id/forester2k18/myworkshopfiles/";
-const workshopItems = [
-  "1830841700",
-  "1929989345",
-  "2504367354",
-  "2511812162",
-  "2535624496",
-  "2537797791",
-  "2629702868"
-];
 
 const pages = {
   home: { file: "Portfolio.cpp", render: renderHome },
-  workshop: { file: "Workshop.asset", render: renderWorkshop },
   about: { file: "About.hpp", render: renderAbout },
   skills: { file: "Skills.hpp", render: renderSkills },
   contacts: { file: "Contacts.hpp", render: renderContacts }
@@ -53,13 +42,6 @@ function buildNavigation() {
     projectNavigation.appendChild(button);
   });
 
-  const creativeGroup = document.createElement("div");
-  creativeGroup.className = "tree-group creative-group";
-  creativeGroup.innerHTML = `
-    <div class="tree-folder">▾ Creative</div>
-    <button class="tree-item workshop-item" data-page="workshop">◆ Workshop.asset</button>
-  `;
-  projectNavigation.closest(".tree-group").after(creativeGroup);
 }
 
 function openPage(pageId) {
@@ -110,27 +92,26 @@ function resumeButton() {
 function renderHome() {
   return `
     <section class="code-page">
-      <p class="code-comment">// C++ developer portfolio</p>
+      <p class="code-comment">// AI &amp; C++ developer portfolio</p>
       <h1 class="hero-name">Илья Вагин</h1>
-      <p class="hero-role">C++ Developer</p>
+      <p class="hero-role">AI &amp; C++ Developer</p>
       <p class="lead">
-        Разрабатываю игровые приложения, системные утилиты и учебные проекты на C++.
-        Основной интерес — архитектура игровых движков, компьютерная графика,
-        управление памятью и внутреннее устройство программных систем.
+        Разрабатываю TensorForge — вычислительную библиотеку на C++ и изучаю основы AI-инфраструктуры.
+        В фокусе — устройство вычислительных ядер, производительность и архитектура движков.
       </p>
       <div class="code-card">
 <pre><span class="code-keyword">class</span> <span class="code-type">Developer</span>
 {
 <span class="code-keyword">public</span>:
     <span class="code-property">Name</span> = <span class="code-string">"Илья Вагин"</span>;
-    <span class="code-property">Position</span> = <span class="code-string">"C++ Developer"</span>;
-    <span class="code-property">Focus</span> = { <span class="code-string">"Game Engine"</span>, <span class="code-string">"Graphics"</span>, <span class="code-string">"Systems"</span> };
-    <span class="code-property">Current</span> = { <span class="code-string">"OpenGL"</span>, <span class="code-string">"CMake"</span>, <span class="code-string">"Interview preparation"</span> };
+    <span class="code-property">Position</span> = <span class="code-string">"AI & C++ Developer"</span>;
+    <span class="code-property">Focus</span> = { <span class="code-string">"AI Systems"</span>, <span class="code-string">"C++"</span>, <span class="code-string">"Game Engines"</span> };
+    <span class="code-property">Current</span> = { <span class="code-string">"TensorForge"</span>, <span class="code-string">"CMake"</span> };
 };</pre>
       </div>
       <div class="actions">
         <a class="button-link" href="https://github.com/Weez9x" target="_blank" rel="noreferrer">GitHub</a>
-        <button class="button-link" type="button" data-open-page="rogalique">Открыть основной проект</button>
+        <button class="button-link" type="button" data-open-page="tensorforge">Открыть TensorForge</button>
         ${resumeButton()}
       </div>
       <section class="certificates-section">
@@ -153,8 +134,8 @@ function renderProjectMedia(project) {
   return `
     <section class="project-media" aria-label="Демонстрация проекта">
       <div class="project-media-header">
-        <span class="code-comment">// gameplay preview</span>
-        <span>${project.media.length === 1 ? "GIF из README" : `${project.media.length} GIF из README`}</span>
+        <span class="code-comment">// selected previews</span>
+        <span>Визуальные материалы</span>
       </div>
       <div class="project-media-grid${project.media.length === 1 ? " single" : ""}">${items}</div>
     </section>
@@ -165,6 +146,9 @@ function renderProject(project) {
   const features = project.features.map(item => `<li>${escapeHtml(item)}</li>`).join("");
   const badges = project.tech.map(item => `<span class="badge">${escapeHtml(item)}</span>`).join("");
   const notice = project.notice ? `<div class="notice">${escapeHtml(project.notice)}</div>` : "";
+  const roadmap = project.roadmap?.map(item => `<li>${escapeHtml(item)}</li>`).join("");
+  const roadmapSection = roadmap ? `<section class="info-block"><h2>Дальше</h2><ul>${roadmap}</ul></section>` : "";
+  const projectLink = project.url ? `<div class="actions"><a class="button-link" href="${project.url}" target="_blank" rel="noreferrer">Открыть GitHub</a></div>` : "";
   return `
     <section class="code-page">
       <p class="code-comment">// project file</p>
@@ -176,53 +160,10 @@ function renderProject(project) {
       <div class="project-grid">
         <section class="info-block"><h2>Что реализовано</h2><ul>${features}</ul></section>
         <section class="info-block"><h2>Что изучено</h2><p>${escapeHtml(project.learned)}</p></section>
+        ${roadmapSection}
       </div>
       <section class="content-card"><h2>Технологии</h2><div class="badges">${badges}</div></section>
-      <div class="actions"><a class="button-link" href="${project.url}" target="_blank" rel="noreferrer">Открыть GitHub</a></div>
-    </section>
-  `;
-}
-
-function renderWorkshop() {
-  const cards = workshopItems.map((id, index) => `
-    <a class="workshop-card" href="https://steamcommunity.com/sharedfiles/filedetails/?id=${id}" target="_blank" rel="noreferrer">
-      <div class="workshop-card-number">0${index + 1}</div>
-      <div class="workshop-card-body">
-        <span class="workshop-card-type">Steam Workshop item</span>
-        <strong>Авторская работа</strong>
-        <span>ID: ${id}</span>
-      </div>
-      <span class="workshop-card-arrow">↗</span>
-    </a>
-  `).join("");
-
-  return `
-    <section class="code-page">
-      <p class="code-comment">// game art & content pipeline</p>
-      <h1 class="page-title">Steam Workshop</h1>
-      <div class="page-meta">Rust · Counter-Strike · Game assets</div>
-      <p class="lead">
-        До перехода в C++ я создавал игровые скины и материалы для Steam Workshop.
-        Эта практика дала понимание PBR-пайплайна, процедурных материалов,
-        текстурирования и того, как контент проходит путь от идеи до игрового ассета.
-      </p>
-      <div class="project-grid">
-        <section class="info-block">
-          <h2>Инструменты</h2>
-          <div class="badges"><span class="badge">Substance 3D Painter</span><span class="badge">Substance 3D Designer</span><span class="badge">Photoshop</span></div>
-        </section>
-        <section class="info-block">
-          <h2>Навыки</h2>
-          <div class="badges"><span class="badge">PBR Workflow</span><span class="badge">Material Authoring</span><span class="badge">Texture Baking</span><span class="badge">UV Mapping</span><span class="badge">Procedural Materials</span></div>
-        </section>
-      </div>
-      <section class="workshop-section">
-        <div class="project-media-header"><span class="code-comment">// selected works</span><span>7 предметов</span></div>
-        <div class="workshop-grid">${cards}</div>
-      </section>
-      <div class="actions">
-        <a class="button-link" href="${workshopUrl}" target="_blank" rel="noreferrer">Открыть мастерскую</a>
-      </div>
+      ${projectLink}
     </section>
   `;
 }
@@ -234,8 +175,9 @@ function renderAbout() {
       <h1 class="page-title">Обо мне</h1>
 
       <p class="lead">
-        Я изучаю C++ через реальные проекты: игры, собственный движок,
-        системные утилиты и низкоуровневые реализации.
+        Сейчас я развиваю TensorForge — вычислительную библиотеку на C++, которая помогает
+        изучать производительность CPU и основы AI-инфраструктуры. Базу инженерной практики
+        составляют C++, игры, собственный движок и низкоуровневые реализации.
 
         Опыт Steam Workshop помогает понимать графику и игровой пайплайн
         не только со стороны кода, но и со стороны создания контента.
@@ -249,7 +191,7 @@ function renderAbout() {
         Этот опыт научил меня быстро разбираться в незнакомых устройствах,
         искать причины неисправностей и доводить задачи до результата.
         Сейчас этот же подход я применяю в разработке на C++, постепенно
-        углубляясь в архитектуру программ, графику и игровые технологии.
+        углубляясь в AI-системы и архитектуру программных движков.
       </p>
     </section>
   `;
@@ -261,10 +203,11 @@ function renderSkills() {
       <p class="code-comment">// technologies without fake percentages</p>
       <h1 class="page-title">Навыки</h1>
       <div class="skills-grid">
-        <section class="info-block"><h3>Языки</h3><div class="badges"><span class="badge">C++</span><span class="badge">GLSL</span></div></section>
-        <section class="info-block"><h3>Библиотеки и API</h3><div class="badges"><span class="badge">SFML</span><span class="badge">OpenGL</span><span class="badge">GLFW</span><span class="badge">GLAD</span><span class="badge">WinAPI</span></div></section>
+        <section class="info-block"><h3>Языки</h3><div class="badges"><span class="badge">C++</span></div></section>
+        <section class="info-block"><h3>Библиотеки и API</h3><div class="badges"><span class="badge">SFML</span><span class="badge">WinAPI</span></div></section>
         <section class="info-block"><h3>Инструменты</h3><div class="badges"><span class="badge">Git</span><span class="badge">CMake</span><span class="badge">Visual Studio</span><span class="badge">Linux</span></div></section>
         <section class="info-block"><h3>Практика</h3><div class="badges"><span class="badge">OOP</span><span class="badge">RAII</span><span class="badge">Move Semantics</span><span class="badge">Algorithms</span><span class="badge">Data Structures</span><span class="badge">Game Architecture</span></div></section>
+        <section class="info-block"><h3>Вычислительная разработка</h3><div class="badges"><span class="badge">Matrix Algorithms</span><span class="badge">Multithreading</span><span class="badge">Testing</span><span class="badge">Benchmarking</span></div></section>
         <section class="info-block"><h3>Graphics & Content Pipeline</h3><div class="badges"><span class="badge">Substance Painter</span><span class="badge">Substance Designer</span><span class="badge">PBR</span><span class="badge">Texture Baking</span><span class="badge">UV Mapping</span></div></section>
         <section class="info-block"><h3>Сертификаты</h3><div class="badges"><span class="badge">XYZ School: C++ для разработки игр · 98 акад. часов</span><span class="badge">Госуслуги: IT-компетенции</span></div><div class="actions"><a class="button-link resume-link" href="${xyzCertificateUrl}" target="_blank" rel="noreferrer">Открыть XYZ School PDF</a></div></section>
       </div>
@@ -280,8 +223,8 @@ function renderContacts() {
       <h1 class="page-title">Контакты</h1>
 
       <p class="lead">
-        Открыт junior-позициям и задачам,
-        связанным с C++, gamedev и графикой а так же другими направлениями программирования.
+        Открыт junior-позициям и задачам, связанным с разработкой AI-систем,
+        C++ и архитектурой игровых движков.
       </p>
 
       <div class="contact-list">

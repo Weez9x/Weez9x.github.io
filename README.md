@@ -2,7 +2,7 @@
 
 Personal portfolio website built with HTML, CSS and JavaScript.
 
-The website showcases my projects, technical skills, Steam Workshop experience, resume links and certificates as a C++ developer with an interest in game development, graphics programming and engine development.
+The website showcases my projects, technical skills, resume links and certificates, with a focus on C++, AI infrastructure and game engine architecture.
 
 ![GitHub last commit](https://img.shields.io/github/last-commit/Weez9x/Weez9x.github.io)
 ![License](https://img.shields.io/badge/license-MIT-green)
@@ -34,28 +34,27 @@ https://weez9x.github.io/
 
 ## Projects
 
+- TensorForge
 - Rogalique Engine
-- OpenGL Particle Sandbox
 - MyString (C++11)
 - Snake
 - Arkanoid
+- Steam Workshop game assets (7 published works, grouped as one project)
 
-## OpenGL Particle Sandbox
+## TensorForge
 
-The portfolio description reflects the current `test` branch of `OpenGl_SandBox_ParticleSystem`.
+TensorForge is an actively developed C++ computing library and an engineering project for exploring CPU performance and the foundations of AI infrastructure. [GitHub repository](https://github.com/Weez9x/TensorForge).
 
-Implemented functionality:
+Implemented work includes:
 
-- OpenGL 3.3 Core through GLFW and GLAD
-- GLSL shader pipeline
-- perspective camera and camera movement
-- screen-to-world cursor coordinates
-- custom `Vector3` and `Matrix4`
-- particle generator and mouse particle spawning
-- semi-implicit Euler integration
-- gravity, damping and restitution bounce
-- GPU point-sprite rendering
-- dynamic VBO updates
+- contiguous row-major `Matrix` storage with overflow checks
+- IJK, IKJ, and blocked matrix multiplication
+- parallel IKJ multiplication with rows distributed across threads
+- correctness tests and a CMake Release benchmark
+
+One author-run benchmark for `1024 × 1024` matrices measured about 54.8 ms for IKJ with eight threads and about 9.7 seconds for IJK. These are machine- and run-specific results, not universal performance guarantees.
+
+Next steps include studying compiler auto-vectorization and SIMD, then developing tensor operations. CUDA and a possible separate inference runtime remain longer-term ideas and are not implemented.
 
 ## Certificates
 
